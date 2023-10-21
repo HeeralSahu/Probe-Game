@@ -1,90 +1,68 @@
-<h3 align="center"> Classic Car Racing game using Vanilla JavaScript </h3>
+# Probe Game: Space Fun Facts Guide 🚀🌟
 
-_**Technology Used**_
+Welcome to **Probe Game**, an exhilarating interstellar adventure where you pilot Astro's spaceship through the vast cosmic highway, while uncovering fascinating facts about the Parker Solar Probe! Get ready for a journey packed with speed, knowledge, and excitement! 🌌✨
 
-_**icons**_ | _**names**_ |
-------------|-------------
-<a href="#"> <img alt="JavaScript" src="https://github.com/Abhishek-k-git/image/blob/main/javascript.svg" width="40" height="40" /> </a> | JavaScript
-<a href="#"> <img alt="HTML5" src="https://github.com/Abhishek-k-git/image/blob/main/html.svg" width="40" height="40" /> </a> | HTML5
-<a href="#"> <img alt="CSS3" src="https://github.com/Abhishek-k-git/image/blob/main/css.svg" width="40" height="40" /> </a> | css3
+## Installation and Quick Start Guide 📥
 
-- *Have a sneak peak to the code*
+**Prerequisites:**
+- **Web Browser:** Ensure you have a modern web browser like Chrome, Firefox, Safari, or Microsoft Edge installed.
+- **Internet Connection:** A stable internet connection is recommended for the initial setup.
+
+**Installation Steps:**
+1. **Clone the Repository:**
+   ```bash
+   git clone [repository_url]
+   cd probe-game
+   ```
+
+2. **Run the Game:**
+   - Locate the `index.html` file in the project folder.
+   - Double-click on `index.html` or right-click and choose "Open with [Your Browser]" to launch the game.
+   - Enjoy the game directly in your browser window!
+
+## How to Play 🎮
+
+1. **Start Screen:**
+   - Click on the `index.html` file to open the game in your browser.
+   - You will be greeted with the start screen and a prompt to click to start the game.
+
+2. **Gameplay:**
+   - Use the arrow keys (`↑`, `↓`, `←`, `→`) on your keyboard to control Astro's spaceship.
+   - Navigate through the cosmic highway, dodging asteroids, comets, and other celestial obstacles.
+   - Collect intriguing facts about the Parker Solar Probe as you journey through space.
+
+3. **Game Over:**
+   - If you collide with an obstacle, the game will end.
+   - Click anywhere on the screen to restart the game and embark on another cosmic adventure.
+
+## Gameplay Features 🚀
+
+- **Dynamic Space Environment:** Navigate your spaceship through a vibrant space setting, surrounded by stars, planets, and nebulae.
+- **Speed Boosts:** Collect warp speed power-ups to accelerate your spaceship and outmaneuver the challenges of the cosmic highway.
+- **Challenging Obstacles:** Dodge asteroids, comets, and cosmic debris, testing your piloting skills as you venture deeper into space.
+- **Real-time Scoring:** Your score increases with each successful dodge and power-up collected. Can you beat your high score and reach for the stars?
+
+## Parker Solar Probe Trivia 🌟
+
+Explore the universe with captivating Parker Solar Probe trivia between gameplay sessions. Learn about its groundbreaking missions, close approaches to the Sun, and other intriguing space facts. Stay curious and informed as you play!
+
+## File Structure 📂
+
+The game directory should have the following structure:
+
 ```
-  //document.querySelector('');
-  //document.addEventListener('event',function);
-  
-  function keyDown(e){
-      e.preventDefault();
-      keys[e.key]=true;
-  }
-  function isCollide(a,b){
-      aRect=a.getBoundingClientRect();
-      bRect=b.getBoundingClientRect();
-      return !((aRect.bottom<bRect.top)||(aRect.top>bRect.bottom)||(aRect.right<bRect.left)||(aRect.left>bRect.right))
-  }
-  function isCollide(a,b){
-      aRect=a.getBoundingClientRect();
-      bRect=b.getBoundingClientRect();
-      return !((aRect.bottom<bRect.top)||(aRect.top>bRect.bottom)||(aRect.right<bRect.left)||(aRect.left>bRect.right))
-  }
-  function moveEnemy(car){
-      let enemy=document.querySelectorAll('.enemy');
-      enemy.forEach(function(item){
-
-          if(isCollide(car,item)){
-              console.log("Bang!");
-              endGame();
-          }
-          if(item.y >=750){
-              item.y=-300;
-              item.style.left=Math.floor(Math.random()*350)+"px";
-          }
-          item.y+=player.speed;
-          item.style.top=item.y+"px";
-      })
-  }
-  function start(){
-      //gameArea.classList.remove('hide');
-      startScreen.classList.add('hide');
-      gameArea.innerHTML="";
-      player.start=true;
-      player.score=0;
-      window.requestAnimationFrame(gamePlay);
-
-      for(x=0;x<5;x++){
-          let roadLine=document.createElement('div');
-          roadLine.setAttribute('class','lines');
-          roadLine.y=(x*150);
-          roadLine.style.top=roadLine.y+"px";
-          gameArea.appendChild(roadLine);
-      }
-
-      let car=document.createElement('div');
-      car.setAttribute('class','car');
-      gameArea.appendChild(car);
-
-      player.x=car.offsetLeft;
-      player.y=car.offsetTop;
-
-      for(x=0;x<3;x++){
-          let enemyCar=document.createElement('div');
-          enemyCar.setAttribute('class','enemy');
-          enemyCar.y=((x+1)*350)*-1;
-          enemyCar.style.top=enemyCar.y+"px";
-          enemyCar.style.backgroundColor=randomColor();
-          enemyCar.style.left=Math.floor(Math.random()*350)+"px";
-          gameArea.appendChild(enemyCar);
-      }
-  }
+probe-game/
+│
+├── index.html         # Main HTML file to start the game
+├── app.js             # Frontend JavaScript file containing game logic
+├── new_game.css          # CSS file for styling the game components
+├── [other_source_files]  # Additional source files (if any)
+│
+└── README.md          # Project documentation and instructions
 ```
 
-<a href="#"> <img align="left" src="https://github.com/Abhishek-k-git/image/blob/main/Screenshot%20(139).png" height="200px" width="250px"/></a>
-<a href="#"> <img align="left" src="https://github.com/Abhishek-k-git/image/blob/main/Screenshot%20(143).png" height="200px" width="250px"/></a>
-<a href="#"> <img align="left" src="https://github.com/Abhishek-k-git/image/blob/main/Screenshot%20(142).png" height="200px" width="250px"/></a><br>
-<!--
-empty line
--->
+## Additional Notes 📝
 
-:innocent:If you hit:boom: you loose...<br>
+- **Web Server:** If you encounter issues loading external files due to browser security restrictions (especially while using `fetch`), consider running the game on a local web server. You can use tools like `http-server` or `live-server` to serve the game files locally.
 
-Created with :heart:
+That's it! You're all set to embark on your space odyssey with **Probe Game**. Have a fantastic time playing, exploring, and learning about the Parker Solar Probe. If you have any questions or need further assistance, feel free to reach out. Enjoy your cosmic journey! 🌌✨
